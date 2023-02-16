@@ -19,44 +19,6 @@ app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../express/index.html')));
 
 
-const user = require('./User');
-const mongoose = require('mongoose')
-
-
-const doURI = "mongodb+srv://markdb:rasengan@cluster0.ad3usrv.mongodb.net/?retryWrites=true&w=majority"
-mongoose.connect(doURI, {useNewUrlParser: true, useUnifiedTopology: true}).then((result) => {
-}).catch((err) => {
-  console.log('there is an error');
-})
-console.log('something is happening here');
-
-
-
-
-
-
-var S_name;
-var S_id;
-app.get('/add-User', (req, res) => {
-    res.sendFile(path.join(__dirname,'/express/index.html'));
-});
-
-app.post('/add-Post', (req, res) => {
-    S_name = req.body.Name;
-    S_id = req.body.ST_ID;
-
-  const User = new user({
-    name: S_name,
-    id: S_id
-  });
-
-  User.save().then((result) => {
-    res.send(result)
-  }).catch((err) => {
-    console.log(err);
-  })
-});
-
 
 
 
