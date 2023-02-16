@@ -6,7 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
@@ -37,7 +37,7 @@ console.log('something is happening here');
 
 var S_name;
 var S_id;
-app.get('/add-User', (req, res) => {
+router.get('/add-User', (req, res) => {
     res.sendFile(path.join(__dirname,'/express/index.html'));
 });
 
