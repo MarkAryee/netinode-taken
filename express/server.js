@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 
-const user = require('./express/User');
+const user = require('./User');
 const mongoose = require('mongoose')
 
 
