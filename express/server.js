@@ -20,6 +20,7 @@ app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 
 const user = require('./express/User');
+const mongoose = require('mongoose')
 
 
 const doURI = "mongodb+srv://markdb:rasengan@cluster0.ad3usrv.mongodb.net/?retryWrites=true&w=majority"
